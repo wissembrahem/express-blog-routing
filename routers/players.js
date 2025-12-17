@@ -32,6 +32,10 @@ router.patch("/:id", (res,req) => {
 })
 
 //DESTROY
+router.delete("/:id",(res, req) => {
+    const id = req.params.id
+    res.send("delete player n."+ id)
+})
 
 
 export default router;
