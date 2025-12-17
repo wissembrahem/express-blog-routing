@@ -1,4 +1,4 @@
-const players = [
+const asromaPlayers = [
     {
         id: 1,
         name: "Francesco",
@@ -73,4 +73,4 @@ const players = [
         ]
     },
 ];
-export default players
+export default asromaPlayers
