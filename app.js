@@ -4,6 +4,8 @@ import playersRouter from "./routers/players.js"
 const app = express();
 const port = 3132;
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
     console.log("Rotta /");
     res.send("test")
