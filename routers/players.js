@@ -1,29 +1,18 @@
 import express from "express";
 import asromaPlayers from "../data.js";
+import {index, show, destroy, store} from "../controllers/playerController.js"
 
 
 const router = express.Router();
 
 //INDEX
-router.get("/", (req, res) => {
-    const risposta = {
-        count: asromaPlayers.length,
-        result: asromaPlayers
-    }
-    res.json("best as roma players 2000-2025")
-})
+router.get("/", index);
 
 //SHOW
-router.get("/:id", (req, res) => {
-    const id = parseInt(req.params.id)
-    const resp = asromaPlayers.find(player => player.id === id)
-    res.json(resp)
-})
+router.get("/:id",show );
 
 //STORE
-router.post("/", (req, res) => {
-    res.send("new asroma player")
-})
+router.post("/", store);
 
 //UPDATE
 router.put("/:id", (req, res) => {
@@ -38,10 +27,6 @@ router.patch("/:id", (req,res) => {
 })
 
 //DESTROY
-router.delete("/:id",(req, res) => {
-    const id = req.params.id
-    res.send("delete player n."+ id)
-})
-
+router.delete("/:id",destroy)
 
 export default router;
